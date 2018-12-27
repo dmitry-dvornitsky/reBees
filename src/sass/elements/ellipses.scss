@@ -1,0 +1,72 @@
+// Имя:             Ellipses
+// Описание:        Эллипсы
+//
+// Блок:            `ellipse`
+//
+// Модификаторы:    `container_small`
+//                  `container_large`
+//                  `container_expand`
+//
+// ========================================================================
+
+
+// Переменные
+// ========================================================================
+
+$ellipse-size:                           35px !default;
+$container-small-max-width:              900px !default;
+
+
+
+/* ========================================================================
+   Компонент: Container
+ ========================================================================== */
+
+/*
+ * 1. Box-sizing должен быть 'content-box', благодаря этому максимальная ширина всегда одинакова и
+ *    не зависит от padding на разных экранах. Это важно для модификаторов.
+ */
+
+.ellipse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $ellipse-size;
+  height: $ellipse-size;
+  background-color: $color-primary;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99 ;
+  transition: $transition-fast;
+
+  &:hover {
+    background-color: #4729b1;
+    box-shadow: 0 7px 15px rgba(45, 23, 122, 0.33);
+  }
+
+  &:hover i {
+    color: $white;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 rgba(45, 23, 122, 0.33);
+  }
+
+  i {
+    font-size: 18px;
+    transition: $transition-fast;
+  }
+
+  /* Телефон в горизонтальном положение и шире */
+  @media (min-width: $screen-md) {
+
+  }
+
+  /* Планшет в горизонтальном положение и шире */
+  @media (min-width: $screen-xl) {
+
+  }
+
+  /* Модификаторы
+ ========================================================================== */
+}

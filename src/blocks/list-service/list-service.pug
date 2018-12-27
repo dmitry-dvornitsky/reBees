@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (list-service)
+
+mixin list-service(serviceItems, mods)
+
+  //- Принимает:
+  //-   serviceItems    [{}] - массив элементов
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +list-service('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' list-service_' + modsList[i].trim();
+      }
+    }
+
+  +b.list-service(class=allMods)&attributes(attributes)
+    +e.UL.items(data-uk-switcher='animation: uk-animation-fade')
+      each serviceItem in serviceItems
+        +e.LI.item
+          +e.IMG.item-icon(src='img/' + serviceItem.icon)
+          +e.item-title= serviceItem.title
+          +e.item-number= serviceItem.number
+    UL.uk-switcher
+      each serviceItem in serviceItems
+        LI
+          +e.info
+            +e.info-title= serviceItem.title
+              +e.info-number= serviceItem.number
+            +e.P.info-text= serviceItem.text
+            +b.A.button._primary._angle(href='') more info

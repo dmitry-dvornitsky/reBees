@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (list-testimonials)
+
+mixin list-testimonials(testimonialsItems,mods)
+
+  //- Принимает:
+  //-   testimonialsItems    [{}] - массив элементов
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +list-testimonials('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' list-testimonials_' + modsList[i].trim();
+      }
+    }
+
+  +b.list-testimonials(class=allMods)&attributes(attributes)
+    each testimonialsItem in testimonialsItems
+      +e.item
+        +e.person
+          +e.photo(style='background:url(img/'+ testimonialsItem.photo + ') no-repeat center; background-size: cover;')
+          +e.name= testimonialsItem.name
+          +e.rating
+            I(class='fa fa-star')
+            I(class='fa fa-star')
+            I(class='fa fa-star')
+            I(class='fa fa-star')
+            I(class='fa fa-star')
+        +e.review
+          +e.review-text= testimonialsItem.text

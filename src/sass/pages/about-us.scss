@@ -1,0 +1,106 @@
+.welcome_about {
+  padding: 160px 0 160px 0;
+}
+
+.who-we-are {
+  position: relative;
+  padding: 150px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__block-info {
+    margin: 0 0 0 100px;
+  }
+
+  &__title {
+    color: #240d41;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47px;
+    text-transform: uppercase;
+    margin: 0 0 50px 0;
+  }
+
+  &__description {
+    color: #240d41;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    max-width: 560px;
+  }
+
+  &__img {
+    position: absolute;
+    right: 100px;
+    top: -180px;
+    z-index: 2;
+    box-shadow: 0 8px 20px rgba(7, 8, 9, 0.09);
+  }
+}
+
+.why-bees {
+  position: relative;
+  padding: 80px 0;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    display: block;
+    border-bottom: 100px solid #f0f0f0;
+    border-left: 100vw solid transparent;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    display: block;
+    border-top: 100px solid #f0f0f0;
+    border-right: 100vw solid transparent;
+  }
+
+
+  &__block-info {
+    margin: 0 0 0 400px;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47px;
+    text-transform: uppercase;
+    max-width: 300px;
+    margin: 0 0 50px 0;
+  }
+
+  &__description {
+    color: $black;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    max-width: 720px;
+  }
+
+  &__dots {
+    position: absolute;
+    display: block;
+    background: url(../img/bg-dots.png) repeat;
+    width: 430px;
+    height: 300px;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.designs {
+  min-height: 100vh;
+  background-color: #fff;
+}

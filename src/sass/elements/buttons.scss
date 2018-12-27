@@ -1,0 +1,89 @@
+// Имя:             Button
+// Описание:        Кнопки
+//
+// Блок:            `button`
+//
+// Модификаторы:    `container_small`
+//                  `container_large`
+//                  `container_expand`
+//
+// ========================================================================
+
+
+// Переменные
+// ========================================================================
+
+$container-max-width:                    1170px !default;
+$container-small-max-width:              900px !default;
+
+
+
+/* ========================================================================
+   Компонент: Container
+ ========================================================================== */
+
+/*
+ * 1. Box-sizing должен быть 'content-box', благодаря этому максимальная ширина всегда одинакова и
+ *    не зависит от padding на разных экранах. Это важно для модификаторов.
+ */
+
+.button {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 16px 45px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: $font-weight_bold;
+  text-align: center;
+  transition: $transition-fast;
+  letter-spacing: 1px;
+
+  /* Телефон в горизонтальном положение и шире */
+  @media (min-width: $screen-md) {
+
+  }
+
+  /* Планшет в горизонтальном положение и шире */
+  @media (min-width: $screen-xl) {
+
+  }
+
+  /* Модификаторы
+ ========================================================================== */
+
+  &_primary {
+    background-color: $color-primary;
+    box-shadow: 0 10px 20px rgba(3, 2, 0, 0.29);
+
+    &:hover {
+      box-shadow: 0 5px 10px rgba(3, 2, 0, 0.29);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 rgba(3, 2, 0, 0.29);
+    }
+  }
+
+  &_secondary {
+    background-color: $color-secondary;
+    box-shadow: 0 5px 15px rgba(91, 56, 213, 0.65);
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(91, 56, 213, 0.65);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 rgba(91, 56, 213, 0.65);
+    }
+  }
+
+  &_angle {
+
+    &:after {
+      font-family: $font-family_icons;
+      content: '\f105';
+      font-size: 18px;
+      margin: 0 0 0 35px;
+    }
+  }
+}

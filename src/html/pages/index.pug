@@ -1,0 +1,127 @@
+extends ../layouts/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  -
+    var serviceItems = [
+      {number:'01', icon: 'icon-service-1.svg', title: 'Lead Generation', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'},
+      {number:'02', icon: 'icon-service-2.svg', title: 'Search Engine Optimization', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'},
+      {number:'03', icon: 'icon-service-3.svg', title: 'Pay Per Click Advertising', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'},
+      {number:'04', icon: 'icon-service-4.svg', title: 'Social Media Marketing', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'},
+      {number:'05', icon: 'icon-service-5.svg', title: 'Website Design', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'},
+      {number:'06', icon: 'icon-service-6.svg', title: 'Branding', text:'In marketing, lead generation is the initiation of consumer interest or enquiry into products or services of a business. Leads can be created for purposes such as list building, e-newsletter list acquisition or for sales leads. The methods for generating leads typically fall under the umbrella of advertising, but may also include non-paid sources such as organic search engine results or referrals from existing customers.'}
+    ];
+
+    var advantagesItems = [
+      {img: 'icon-advantages-1.png', title: 'The best price', text: 'Marketing yourself on the web should be simple.'},
+      {img: 'icon-advantages-1.png', title: 'The price', text: 'Marketing yourself on the web should be simple.'},
+      {img: 'icon-advantages-1.png', title: 'The best price', text: 'Marketing yourself on the web should be simple.'}
+    ];
+
+    var testimonialsItems = [
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+      {photo: 'photo-testimonials-1.png', name: 'Valentina Ivanova', text: 'We initially reached out to the team at REW when we were looking to interview a few companies to help us re-launch our website in 2016. What attracted us initially was the incredible SEO friendliness of the sites that'},
+    ];
+
+    var articles_slider = [
+      {photo: 'bg-articles_slider-1.png', title: 'Valentina Ivanova'},
+      {photo: 'photo-testimonials-1.png', title: 'Valentina Ivanova'},
+      {photo: 'photo-testimonials-1.png', title: 'Valentina Ivanova'},
+      {photo: 'photo-testimonials-1.png', title: 'Valentina Ivanova'},
+    ];
+  +b.SECTION.welcome.section
+    .container
+      +e.block
+        +e.title We help clients#[br]create digital products
+        +e.text DAN directories display award-winning agencies in USA, UK, Canada,#[br]Australia, Europe, MENA and Asia regions
+        +b.A.button._primary(href='#') See our portfolio
+      +e.IMG(src='img/hexagon-huge.png').hexagon-huge
+      +e.IMG(src='img/hexagon-big.png').hexagon-big-1
+      +e.IMG(src='img/hexagon-big.png').hexagon-big-2
+      +e.IMG(src='img/hexagon-medium.png').hexagon-medium
+      +e.IMG(src='img/hexagon-small.png').hexagon-small
+    +e.bottom-bg
+  +b.SECTION.why-hire
+    .container
+      +e.IMG.photo-man(src='img/photo-man.png')
+      +b.card
+        +e.title Why you#[br]should hire us
+        +e.P.text Marketing yourself on the web should be simple. Placester gives you everything you need to promote your brand, manage relationships, and grow your real estate business online
+        +e.P.text Marketing yourself on the web should be simple. Placester gives you everything you need to promote your brand, manage relationships Marketing yourself on the web should be simple.  Marketing yourself on the web should be simple.
+        +b.button._primary._angle(href='#') more info
+      +e.dots
+  +b.SECTION.advantages
+    +e.block
+      .container
+        +e.list
+          each advantagesItem in advantagesItems
+            +e.item
+              +e.IMG.item-icon(src='img/' + advantagesItem.img)
+              +e.item-info
+                +e.item-title= advantagesItem.title
+                +e.item-text= advantagesItem.text
+  +b.SECTION.service
+    .container
+      +e.title our service
+      +list-service(serviceItems)
+  +b.SECTION.testimonials
+    .container
+      +e.title What say our clients
+      +list-testimonials(testimonialsItems, 'whitebg')
+  +b.SECTION.clients
+    +e.bg-top
+    .container
+     +e.title-block
+        +e.title our clients
+        +e.text When you talk to them, you’ll know what we mean. We develop great relationships, we work extremely hard, and we do whatever it takes to ensure they succeed online and love their experience with us.
+     +b.clients-list
+        +e.UL.categories(data-uk-switcher='animation: uk-animation-fade')
+          +e.LI.title Legal
+          +e.LI.title Franchice
+        +e.UL.blocks.uk-switcher
+          +e.LI.block
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+          +e.LI.block
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+            +e.IMG.client-logo(src='img/icon-clients-1.png')
+        +e.dots
+    +e.bg-bottom
+  +b.SECTION.articles-slider
+    .container
+      +e.item_main(style='background: url(img/bg-articles_slider-1.png) no-repeat center; background-size: cover;')
+        +e.item-title Advantages of SEO Over Other Marketing Channels
+      +e.block
+        +e.title-block
+          +e.title Sharpen your real estate marketing skills
+          +e.text Many real estate professionals cringe when they first hear how much SEO service can cost. However, is it really that expensive or they’re just not aware of the potential
+        +e.list
+          +e.item(style='background: url(img/bg-articles_slider-1.png) no-repeat center; background-size: cover;')
+            +e.item-title Real Estate Internet Marketing
+          +e.item(style='background: url(img/bg-articles_slider-1.png) no-repeat center; background-size: cover;')
+            +e.item-title Real Estate Internet Marketing
+        +e.nav-block
+          .ellipse
+            i(class='fa fa-angle-left')
+          .ellipse
+            i(class='fa fa-angle-right')

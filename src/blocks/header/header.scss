@@ -1,0 +1,78 @@
+// В этом файле должны быть стили для БЭМ-блока header, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header {
+  padding: 30px 0 0 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+
+
+    &__item {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $white;
+      margin: 0 18px;
+      letter-spacing: 0.8px;
+      border-bottom: 2px solid transparent;
+      transition: $transition-fast;
+
+      &:hover {
+        color: $color-primary;
+        border-bottom: 1px solid $color-primary;
+      }
+
+      &:first-of-type {
+        margin: 0 20px 0 0;
+      }
+
+      &:last-of-type {
+        margin: 0 0 0 20px;
+      }
+    }
+  }
+
+  .call {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+
+    &__number {
+      font-size: 16px;
+      font-weight: 300;
+      color: $white;
+      margin: 0 5px 0 0;
+
+      &:before {
+        font-family: $font-family_icons;
+        content: '\f095';
+        color: $color-primary;
+        margin: 0 8px 0 0;
+        vertical-align: middle;
+        font-size: 18px;
+      }
+    }
+
+    &__link {
+      font-size: 13px;
+      font-weight: 100;
+      line-height: 33px;
+      text-decoration: underline;
+      color: $color-primary;
+      margin: 0 0 -5px 22px;
+      letter-spacing: 0.7px;
+    }
+  }
+}

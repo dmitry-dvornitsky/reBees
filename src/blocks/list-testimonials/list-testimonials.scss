@@ -1,0 +1,180 @@
+// В этом файле должны быть стили для БЭМ-блока list-testimonials, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.list-testimonials {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+
+  .slick-list {
+    min-height: 560px;
+  }
+
+  .slick-center {
+
+    .list-testimonials__review {
+      opacity: 1;
+    }
+
+    .list-testimonials__rating {
+      opacity: 1;
+    }
+
+    .list-testimonials__photo {
+      filter: grayscale(0%);
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .slick-center.list-testimonials__item {
+    top: 0;
+  }
+
+  .slick-prev {
+    position: absolute;
+    left: 0;
+    top: 45px;
+  }
+
+  .slick-next {
+    position: absolute;
+    right: 0;
+    top: 45px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+    top: 15px;
+    transition: $transition-fast;
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__photo {
+    filter: grayscale(100%);
+    width: 85px;
+    height: 85px;
+    border: 3px solid $white;
+    box-shadow: 0 5px 15px rgba(7, 8, 9, 0.35);
+    border-radius: 50%;
+    transition: $transition-fast;
+  }
+
+  &__name {
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 20px 0;
+  }
+
+  &__rating {
+    opacity: 0;
+    transition: $transition-fast;
+
+    i {
+      color: $yellow;
+      font-size: 16px;
+      margin: 0 5px;
+    }
+  }
+
+  &__review {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px;
+    background-color: $white;
+    width: 430px;
+    border-radius: 5px;
+    box-shadow: 0 8px 13px rgba(7, 8, 9, 0.35);
+    margin: 60px 0 0 0;
+    opacity: 0;
+    transition: $transition-fast;
+    user-select: none;
+
+    &:before {
+      position: absolute;
+      content: '\f10e';
+      font-family: $font-family_icons;
+      font-size: 100px;
+      color: #fff8e6;
+      left: 45px;
+      top: 20px;
+      z-index: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      border: 30px solid transparent;
+      border-bottom: 30px solid $white;
+    }
+  }
+
+  &__review-text {
+    position: relative;
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    z-index: 1;
+  }
+
+  &_whitebg {
+
+    .ellipse {
+      background-color: $color-secondary;
+
+      i {
+        color: #fff;
+      }
+    }
+
+    .list-testimonials {
+
+      &__name {
+        color: $black;
+      }
+
+      &__photo {
+        border: 3px solid $color-secondary;
+      }
+
+      &__rating {
+
+        i {
+          color: $color-secondary;
+        }
+      }
+
+      &__review {
+        background: $color-secondary;
+
+        &:before {
+          color: #fff;
+          opacity: 0.2;
+        }
+
+        &:after {
+          border-bottom: 30px solid $color-secondary;
+        }
+      }
+
+      &__review-text {
+        color: $white;
+      }
+    }
+  }
+}

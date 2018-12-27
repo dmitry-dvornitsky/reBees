@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+
+mixin header(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' header_' + modsList[i].trim();
+      }
+    }
+
+  +b.HEADER.header(class=allMods)&attributes(attributes)
+    .container
+      +e.A.logo(href='index.html')
+        +e.IMG(src='img/logo.png')
+      +b.NAV.nav
+        -
+          var navLinks = [
+            {url: 'index',        name: 'Home'},
+            {url: 'blog',         name: 'Blog'},
+            {url: 'about',        name: 'About'},
+            {url: 'services',     name: 'Services'},
+            {url: 'why-hire-us',  name: 'Why Hire us?'},
+            {url: 'testimonials', name: 'testimonials'},
+          ];
+        each navLink in navLinks
+          +e.A.item(href=navLink.url + '.html')= navLink.name
+      +b.call
+        +e.number 866-622-5648
+        +e.A.link(href='#') Request more info

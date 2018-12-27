@@ -1,0 +1,38 @@
+extends ../layouts/layout.pug
+
+block meta
+  title About us
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +b.SECTION.welcome_about
+    .container
+      +e.title ABOUT US
+    +e.bottom-bg
+  +b.SECTION.who-we-are
+    .container
+      +e.block-info
+        +e.title WHO WE ARE?
+        +e.description We are a full-service, data-driven digital marketing agency exclusively specializing in real estate industry. We're solely focused on helping real estate professionals grow their businesses through our proven web strategies and innovative technology solutions.
+      +e.IMG.img(src='img/photo-who-we-are.png')
+  +b.SECTION.why-bees
+    .container
+      +e.block-info
+        +e.title WHY REAL ESTATE BEES?
+        +e.description We are not just a real estate-focused marketing firm. We're much more than that! We know your business, your lingo, your challenges and your top priority goals. We've developed a unique, colaborative relationships with high performing real estate professionals throughout the US who consistently share their valuable industry insights with us. These strategic alliances allow us to stay on the edge of all the industry's latest trends by constantly innovating through our creative marketing strategies and cutting-edge technology. This makes our already unique, industry-specific expertise invaluable and gives our clients unfair competitive advantage over their competitors.
+    +e.dots
+  +b.SECTION.designs
+    .container
+  +b.SECTION.cases
+    .container
+      +b.list-cases
+        +e.item
+          +e.item-img
+          +e.item-info
+            +e.block-title
+              +e.item-title
+              +b.button._primary._angle
+            +e.item-description

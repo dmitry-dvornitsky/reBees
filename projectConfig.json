@@ -1,0 +1,31 @@
+{
+  "blocks": {
+    "header": [],
+    "list-service": [],
+    "testimonials": [],
+    "list-testimonials": [],
+    "footer": []
+  },
+  "addSass": [
+    "src/sass/helpers.scss",
+    "src/sass/functions.scss",
+    "src/sass/mixins.scss",
+    "src/sass/base.scss",
+    "src/sass/elements.scss",
+    "src/sass/plugins.scss",
+    "src/sass/pages.scss"
+  ],
+  "addJsBefore": [
+    "src/js/jquery.js",
+    "src/js/uikit.js",
+    "src/js/slick.js"
+  ],
+  "addJsAfter": [
+    "src/js/main.js"
+  ],
+  "dirs": {
+    "srcPath": "src/",
+    "buildPath": "dist/",
+    "blocksDirName": "blocks"
+  }
+}

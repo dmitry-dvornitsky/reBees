@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer)
+
+mixin footer(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +footer('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' footer_' + modsList[i].trim();
+      }
+    }
+
+    var articles_slider = [
+      {icon: '', link: ''},
+    ];
+
+  +b.footer(class=allMods)&attributes(attributes)
+    +e.bg-top
+    .container
+      +e.information
+        +e.title Contact
+        +e.call-block
+          +e.number 866 - 622 - 5648
+          +b.A.button._primary._angle(href='#') more info
+        +e.ADDRESS.address California Office 27750 Entertainment Drive Valencia, CA 91355
+        +e.logo
+          img(src='img/logo-footer.png')
+        +b.social-list
+          +e.A.item(href='')
+            i(class='fa fa-facebook')
+          +e.A.item(href='')
+            i(class='fa fa-twitter')
+      +e.IMG.map(src='img/map.png')

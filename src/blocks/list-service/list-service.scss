@@ -1,0 +1,102 @@
+// В этом файле должны быть стили для БЭМ-блока list-service, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.list-service {
+  display: flex;
+  align-items: flex-start;
+
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(7, 8, 9, 0.1);
+    background-color: #fff;
+    padding: 30px;
+    width: 215px;
+    min-height: 105px;
+    margin: 5px 0;
+    transition: $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fcbb0d;
+      box-shadow: 0 8px 28px rgba(252, 187, 13, 0.6);
+    }
+
+    &:hover .list-service__item-number {
+      color: $white;
+    }
+  }
+
+  &__item-title {
+    color: $black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__item-number {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #cbcaca;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+
+  &__info {
+    max-width: 500px;
+    margin: 65px 0 0 120px;
+  }
+
+  &__info-title {
+    position: relative;
+    color: $black;
+    font-size: rem(36px);
+    font-weight: 600;
+    line-height: 28px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 63px;
+      height: 2px;
+      background-color: $color-primary;
+      left: -80px;
+      top: 14px;
+    }
+  }
+
+  &__info-number {
+    position: absolute;
+    left: -10px;
+    top: -45px;
+    z-index: -1;
+    color: #e9e7f1;
+    font-size: 140px;
+    font-weight: 400;
+  }
+
+  &__info-text {
+    color: $black;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 50px 0;
+  }
+}
